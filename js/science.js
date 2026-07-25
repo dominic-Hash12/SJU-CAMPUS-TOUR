@@ -68,7 +68,7 @@ title:"Entrance",
 description:
 "Main entrance of the Science Block.",
 
-image:"../images/science/entrance.jpg",
+image:"../images/science/entrance.jpeg",
 
 transition:
 "../videos/science/intro.MOV",
@@ -90,7 +90,7 @@ title:"Main Corridor",
 description:
 "Central corridor connecting all laboratories.",
 
-image:"../images/science/corridor.jpg",
+image:"../images/science/corridor.jpeg",
 
 transition:
 "../videos/science/entrance_corridor.MOV",
@@ -126,7 +126,7 @@ title:"Physics Laboratory",
 description:
 "Physics laboratory with modern equipment.",
 
-image:"../images/science/physics.jpg",
+image:"../images/science/physics.jpeg",
 
 transition:
 "../videos/science/corridor_physics.MOV",
@@ -156,7 +156,7 @@ title:"Chemistry Laboratory",
 description:
 "Chemistry laboratory for practical experiments.",
 
-image:"../images/science/chemistry.jpg",
+image:"../images/science/chemistry.jpeg",
 
 transition:
 "../videos/science/physics_chemistry.MOV",
@@ -180,7 +180,7 @@ title:"Computer Laboratory",
 description:
 "Computer laboratory with modern systems.",
 
-image:"../images/science/computer.jpg",
+image:"../images/science/computer.jpeg",
 
 transition:
 "../videos/science/chemistry_computer.MOV",
