@@ -409,13 +409,11 @@ function goToLocation(id){
 
     transitionVideo.play();
 
-    transitionVideo.onended = ()=>{
+    function goToLocation(id){
 
-        transitionScreen.style.display="none";
+    loadPanorama(id);
 
-        loadPanorama(id);
-
-    };
+}        
 
 }
 
