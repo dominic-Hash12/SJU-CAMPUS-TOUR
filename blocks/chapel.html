@@ -1,71 +1,92 @@
-/*TEST*/
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport"
 content="width=device-width, initial-scale=1.0">
 
-<title>Science Block</title>
+<title>Science Block | St. Joseph's University</title>
 
+<!-- A-Frame -->
+<script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+
+<!-- CSS -->
 <link rel="stylesheet"
 href="../css/science.css">
-
-<script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
 
 </head>
 
 <body>
 
-<!-- Loading -->
+<!-- ==========================
+     INTRO VIDEO
+=========================== -->
 
-<div id="loader">
+<div id="introScreen">
 
-<div class="spinner"></div>
+    <video
+        id="introVideo"
+        playsinline
+        muted
+        autoplay>
 
-<h2>Loading Science Block...</h2>
+        <source
+            src="../videos/science/intro.MOV"
+            type="video/mp4">
+
+    </video>
+
+    <div id="introOverlay">
+
+        <h1>Science Block</h1>
+
+        <p>
+            St. Joseph's University
+        </p>
+
+    </div>
 
 </div>
 
-<!-- Transition Video -->
+<!-- ==========================
+     MAIN APP
+=========================== -->
 
-<div id="videoContainer">
+<div id="app">
 
-<video
-id="transitionVideo"
-playsinline
-muted>
-
-</video>
-
-<div id="videoOverlay">
-
-<h1 id="videoTitle">
-Science Block
-</h1>
-
-</div>
-
-</div>
-
-<!-- Main -->
-
-<div id="viewer">
-
-<!-- Sidebar -->
+<!-- ==========================
+     SIDEBAR
+=========================== -->
 
 <div id="sidebar">
 
-<div class="sidebarHeader">
+<div id="sidebarHeader">
 
 <h2>Science Block</h2>
 
-<p>Panorama Locations</p>
+<p>
+
+Choose a Location
+
+</p>
 
 </div>
+
+<!-- Search -->
+
+<div id="searchBox">
+
+<input
+type="text"
+id="search"
+placeholder="Search Panorama...">
+
+</div>
+
+<!-- Panorama List -->
 
 <div id="locationList">
 
@@ -74,9 +95,16 @@ class="location active"
 data-id="entrance">
 
 <img
-src="../thumbs/science/entrance.jpg">
+loading="lazy"
+src="../images/science/entrance.jpeg">
 
-<span>Entrance</span>
+<div>
+
+<h3>Entrance</h3>
+
+<p>Main Entrance</p>
+
+</div>
 
 </div>
 
@@ -85,9 +113,16 @@ class="location"
 data-id="corridor">
 
 <img
-src="../thumbs/science/corridor.jpg">
+loading="lazy"
+src="../images/science/corridor.jpeg">
 
-<span>Main Corridor</span>
+<div>
+
+<h3>Corridor</h3>
+
+<p>Main Corridor</p>
+
+</div>
 
 </div>
 
@@ -96,9 +131,16 @@ class="location"
 data-id="physics">
 
 <img
-src="../thumbs/science/physics.jpg">
+loading="lazy"
+src="../images/science/physics.jpeg">
 
-<span>Physics Lab</span>
+<div>
+
+<h3>Physics Lab</h3>
+
+<p>Laboratory</p>
+
+</div>
 
 </div>
 
@@ -107,9 +149,16 @@ class="location"
 data-id="chemistry">
 
 <img
-src="../thumbs/science/chemistry.jpg">
+loading="lazy"
+src="../images/science/chemistry.jpeg">
 
-<span>Chemistry Lab</span>
+<div>
+
+<h3>Chemistry Lab</h3>
+
+<p>Laboratory</p>
+
+</div>
 
 </div>
 
@@ -118,9 +167,14 @@ class="location"
 data-id="computer">
 
 <img
-src="../thumbs/science/computer.jpg">
+loading="lazy"
+src="../images/science/computer.jpeg">
 
-<span>Computer Lab</span>
+<div>
+
+<h3>Computer Lab</h3>
+
+<p>Laboratory</p>
 
 </div>
 
@@ -128,54 +182,245 @@ src="../thumbs/science/computer.jpg">
 
 </div>
 
-<!-- Panorama -->
+</div>
 
-<div id="panoContainer">
+<!-- ==========================
+     MAIN VIEWER
+=========================== -->
+
+<div id="viewer">
+
+<!-- Top Bar -->
+
+<div id="topBar">
+
+<button id="menuBtn">
+
+☰
+
+</button>
+
+<button
+id="backBtn"
+onclick="location.href='../vr.html'">
+
+← Campus Hub
+
+</button>
+
+<h2 id="currentLocation">
+
+Entrance
+
+</h2>
+
+</div>
+<!-- ==========================
+     TRANSITION VIDEO
+=========================== -->
+
+<div id="transitionScreen">
+
+    <video
+        id="transitionVideo"
+        playsinline
+        muted>
+
+    </video>
+
+</div>
+
+<!-- ==========================
+     FADE LAYER
+=========================== -->
+
+<div id="fadeLayer"></div>
+
+<!-- ==========================
+     AFRAME SCENE
+=========================== -->
 
 <a-scene
+id="scene"
 embedded
+loading-screen="enabled:false"
 vr-mode-ui="enabled:true"
-loading-screen="enabled:false">
+renderer="antialias:true">
+
 
 <a-assets>
 
-<img id="entrance"
-src="../images/science/entrance.jpg">
-
-<img id="corridor"
-src="../images/science/corridor.jpg">
-
-<img id="physics"
-src="../images/science/physics.jpg">
-
-<img id="chemistry"
-src="../images/science/chemistry.jpg">
-
-<img id="computer"
-src="../images/science/computer.jpg">
+<img
+id="arrow"
+src="../icons/arrow.png">
 
 </a-assets>
 
-<a-sky
-id="sky"
-src="#entrance">
-</a-sky>
 
-<a-camera
-position="0 1.6 0"
-look-controls="magicWindowTrackingEnabled:true">
+<!-- Camera -->
+
+<a-entity
+id="cameraRig"
+position="0 1.6 0">
+
+<a-camera>
 
 <a-cursor
-color="white">
+color="white"
+fuse="false">
 </a-cursor>
 
 </a-camera>
 
+</a-entity>
+
+
+
+<!-- Panorama -->
+
+<a-sky
+
+id="sky"
+
+src="../images/science/entrance.jpeg"
+
+rotation="0 -90 0">
+
+</a-sky>
+
+
+
+<!-- HOTSPOTS -->
+
+<a-entity id="hotspots">
+
+
+<a-image
+
+id="toCorridor"
+
+class="hotspot"
+
+src="#arrow"
+
+position="0 1.6 -4"
+
+width="0.8"
+
+height="0.8"
+
+rotation="0 0 0">
+
+</a-image>
+
+
+</a-entity>
+
+
 </a-scene>
 
+<!-- ==========================
+     INFO PANEL
+=========================== -->
+
+<div id="infoPanel">
+
+<div id="infoHeader">
+
+<h2 id="infoTitle">
+
+Entrance
+
+</h2>
+
+<button id="toggleInfo">
+
+−
+
+</button>
+
+</div>
+
+<div id="infoContent">
+
+<p id="infoDescription">
+
+Welcome to the Science Block.
+
+Click the navigation arrows or select a
+location from the sidebar.
+
+</p>
+
+<h3>Facilities</h3>
+
+<ul>
+
+<li>🧪 Chemistry Laboratory</li>
+
+<li>🔬 Physics Laboratory</li>
+
+<li>💻 Computer Laboratory</li>
+
+<li>📚 Smart Classrooms</li>
+
+<li>👨‍🏫 Faculty Rooms</li>
+
+</ul>
+
 </div>
 
 </div>
+
+</div>
+<!-- END OF #viewer -->
+
+<!-- END OF #app -->
+
+</div>
+<!-- ==========================
+     MOBILE MENU OVERLAY
+=========================== -->
+
+<div id="menuOverlay"></div>
+
+<!-- ==========================
+     LOADING INDICATOR
+=========================== -->
+
+<div id="loadingIndicator">
+
+<div class="loadingSpinner"></div>
+
+<p>Loading Panorama...</p>
+
+</div>
+
+<!-- ==========================
+     ERROR MESSAGE
+=========================== -->
+
+<div id="errorBox" style="display:none;">
+
+<h2>Unable to Load</h2>
+
+<p>
+
+The requested panorama could not be loaded.
+
+</p>
+
+<button onclick="location.reload()">
+
+Reload
+
+</button>
+
+</div>
+
+<!-- ==========================
+     JAVASCRIPT
+=========================== -->
 
 <script src="../js/science.js"></script>
 
