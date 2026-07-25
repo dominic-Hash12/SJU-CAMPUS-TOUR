@@ -40,7 +40,7 @@ title:"Science Block Entrance",
 
 image:"#entrance",
 
-transition:"../videos/science/intro.mp4"
+transition:"../videos/science/intro.MOV"
 
 },
 
@@ -50,7 +50,7 @@ title:"Main Corridor",
 
 image:"#corridor",
 
-transition:"../videos/science/walk1.mp4"
+transition:"../videos/science/walk1.MOV"
 
 },
 
@@ -60,7 +60,7 @@ title:"Physics Laboratory",
 
 image:"#physics",
 
-transition:"../videos/science/walk2.mp4"
+transition:"../videos/science/walk2.MOV"
 
 },
 
@@ -70,7 +70,7 @@ title:"Chemistry Laboratory",
 
 image:"#chemistry",
 
-transition:"../videos/science/walk3.mp4"
+transition:"../videos/science/walk3.MOV"
 
 },
 
@@ -80,7 +80,7 @@ title:"Computer Laboratory",
 
 image:"#computer",
 
-transition:"../videos/science/walk4.mp4"
+transition:"../videos/science/walk4.MOV"
 
 }
 
