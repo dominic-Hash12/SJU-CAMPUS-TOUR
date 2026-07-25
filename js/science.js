@@ -71,7 +71,7 @@ description:
 image:"../images/science/entrance.jpeg",
 
 transition:
-"../videos/science/intro.MOV",
+"../videos/science/intro.mov",
 
 hotspots:[
 {
@@ -93,7 +93,7 @@ description:
 image:"../images/science/corridor.jpeg",
 
 transition:
-"../videos/science/entrance_corridor.MOV",
+"../videos/science/entrance_corridor.mov",
 
 hotspots:[
 
@@ -129,7 +129,7 @@ description:
 image:"../images/science/physics.jpeg",
 
 transition:
-"../videos/science/corridor_physics.MOV",
+"../videos/science/corridor_physics.mov",
 
 hotspots:[
 
@@ -159,7 +159,7 @@ description:
 image:"../images/science/chemistry.jpeg",
 
 transition:
-"../videos/science/physics_chemistry.MOV",
+"../videos/science/physics_chemistry.mov",
 
 hotspots:[
 
@@ -183,7 +183,7 @@ description:
 image:"../images/science/computer.jpeg",
 
 transition:
-"../videos/science/chemistry_computer.MOV",
+"../videos/science/chemistry_computer.mov",
 
 hotspots:[
 
